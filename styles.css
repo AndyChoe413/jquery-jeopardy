@@ -1,0 +1,59 @@
+body {
+  text-align: center;
+  background-image: url("https://media.giphy.com/media/1vZaAcldbX8Xh6lMlV/giphy.gif");
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.boxes {
+  border: solid white 8px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  height: 550px;
+  width: 800px;
+  align-items: center;
+  justify-content: center;
+}
+
+.items {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border: solid hotpink 5px;
+  margin: auto;
+  display: flex;
+  height: 100px;
+  width: 150px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: blue;
+  font-size: 40px;
+}
+
+.heading {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: auto;
+  color: white;
+  border: yellow solid 8px;
+  background-color: blue;
+  width: 800px;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.score {
+  border: solid greenyellow 8px;
+  margin: auto;
+  width: 780px;
+  background-color: goldenrod;
+  padding: 11px;
+  color: white;
+  font-size: 30px;
+}
