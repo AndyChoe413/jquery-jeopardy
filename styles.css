@@ -57,3 +57,27 @@ body {
   color: white;
   font-size: 30px;
 }
+
+.questions {
+  border: solid hotpink 8px;
+  color: hotpink;
+  background-color: turquoise;
+  font-size: 27px;
+  width: 785px;
+  height: 80px;
+  margin: auto;
+  padding: 9px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.answer-container {
+  display: inline;
+  color: white;
+  font-size: 30px;
+  /* border: solid hotpink 8px; */
+  margin-top: 20px;
+  padding: 10px;
+}
