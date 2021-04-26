@@ -1,23 +1,23 @@
 //heading
 const mainContainer = $('.main-container')
-const heading = $('<div class="heading"><h1>Welcome to Double Jeopardy</h1></div')
-mainContainer.append(heading) 
+const heading = $('<div class="heading"></div')
+mainContainer.append(heading)
 
-//check local storage
-const storedScore = localStorage.getItem('scoreText')
-//scores
+
+//score content
 let score = 0;
-let convertedScore = '$' + score
-const scoreDiv = $(`<div class="score">YOUR SCORE: ${convertedScore}</</div>`);
+const scoreDiv = $(`<div class="score-ctn">YOUR SCORE: 
+<span class = "score">$${score}</span>
+</div>`);
 mainContainer.append(scoreDiv);
 
-if (storedScore !== null) {
-    score = Number(storedScore) 
-    console.log(storedScore)
-    localStorage.setItem('scoreText', score)
-    $('.score').text(score)
+let storedScore = localStorage.getItem('scoreText')
+if (storedScore !== null) {  
+    score = Number(storedScore)
 }
 
+localStorage.setItem('score', score)
+$('.score').text(`$${score}`)
 
 //boxes
 const boxes = $('<div class="boxes"></div>')
@@ -165,31 +165,41 @@ $('.items').click((e)=> {
 
 //Answer div
 const answer = $(
-`<fieldset class="answer-container">Your Answer:
+`<div class="answer-container">Your Answer:
 <input class="input" type="text">
 <input class="submit-btn" type="submit" value="Submit">
-</fieldset>`)
+</div>`)
 mainContainer.append(answer)
 
 //global variables to compare answers with when submit button is clicked
 let correctAnswer = '';
 let chosenValue = ''
-let convertedValue = chosenValue.split('$').join('')
 
 //submit button click action
 $('.submit-btn').click(() => {
     const userAnswer = $('.input').val()
-    const prevScore = localStorage.getItem('scoreText')
-    console.log(userAnswer)
+    let get = localStorage.getItem('scoreText')
+    let convertedValue = chosenValue.split('$').join('')
 
     if (correctAnswer.toLocaleLowerCase() == userAnswer.toLocaleLowerCase()) {
         
         $('.questions').text('CORRECT! YOU SCORED ' + chosenValue)
-        // $('.answer-container').text()
-        localStorage.setItem('scoreText', convertedValue)
-        score += convertedValue
+        let total = Number(convertedValue) + Number(get)
+        console.log(total)
+        localStorage.setItem('scoreText', total)
+
+        score = Number(total)
+
+        setTimeout(() => {
+            location.reload()
+        }, 3000)
+        
     } else {
-         $('.questions').text('Wrong Answer!!!')
+        $('.questions').text('Wrong Answer!!!')
+
+        setTimeout(() => {
+            location.reload()
+        }, 3000)
     }
 })
     

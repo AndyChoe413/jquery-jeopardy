@@ -35,6 +35,8 @@ body {
 }
 
 .heading {
+  background-image: url("https://media.giphy.com/media/8m55WXyZ46HnJBQ7br/giphy.gif");
+  background-size: contain;
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: auto;
   color: white;
@@ -48,7 +50,7 @@ body {
   text-align: center;
 }
 
-.score {
+.score-ctn {
   border: solid greenyellow 8px;
   margin: auto;
   width: 780px;
@@ -76,8 +78,9 @@ body {
 .answer-container {
   display: inline;
   color: white;
+  margin: 50px;
   font-size: 30px;
   /* border: solid hotpink 8px; */
   margin-top: 20px;
-  padding: 10px;
+  padding: 20px;
 }
